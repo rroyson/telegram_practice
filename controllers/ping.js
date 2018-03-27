@@ -7,13 +7,31 @@ class PingController extends TelegramBaseController {
   /**
      * @param {Scope} $
      */
-  pingHandler($) {
-    $.sendMessage('pong')
+  greetingHandler($) {
+    const user = $._update._message._from
+    $.sendMessage(
+      `Hello ${user._firstName}, Thank you for contacting Citibot.  To get started type pothole.`
+    )
+  }
+  potholeHandler($) {
+    const user = $._update._message._from
+    $.sendMessage(
+      `thank you ${user._firstName}, please enter the address of pothole`
+    )
+  }
+
+  successHandler($) {
+    const message = $._update._message._text
+    $.sendMessage(
+      `Your request for pothole at ${message} repair has been submited`
+    )
   }
 
   get routes() {
     return {
-      pingCommand: 'pingHandler'
+      greetingCommand: 'greetingHandler',
+      potholeCommand: 'potholeHandler',
+      successCommand: 'successHandler'
     }
   }
 }

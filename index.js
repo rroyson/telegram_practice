@@ -11,5 +11,10 @@ const PingController = require('./controllers/ping')
 const OtherwiseController = require('./controllers/otherwise')
 
 tg.router
-  .when(new TextCommand('ping', 'pingCommand'), new PingController())
+  .when(new TextCommand('hello', 'greetingCommand'), new PingController())
+  .when(new TextCommand('pothole', 'potholeCommand'), new PingController())
+  .when(
+    new TextCommand('1445 downwood place', 'successCommand'),
+    new PingController()
+  )
   .otherwise(new OtherwiseController())

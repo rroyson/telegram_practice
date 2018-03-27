@@ -1,8 +1,5 @@
 # Practice Telegram Chatbot
 
-### Currently uses two controllers
-- `ping` returns 'pong' to Telegram
-- `otherwise` catch all other messages and handles with error
 
 ### Setup
 
@@ -18,5 +15,4 @@ $ npm install
 $ npm start
 ```
 
-- You should now be able to send `ping` to your bot and recieve a `pong` as a response.
-- Anything else you send should result in a response of `Could not understand your message`
+- type `hello` to test it out

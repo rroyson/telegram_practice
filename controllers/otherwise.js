@@ -5,7 +5,11 @@ const TelegramBaseController = Telegram.TelegramBaseController
 
 class OtherwiseController extends TelegramBaseController {
   handle($) {
-    $.sendMessage('Could not understand your message')
+    const user = $._update._message._from
+
+    $.sendMessage(
+      `We're sorry ${user._firstName}. We could not understand your request.  Try typing hello to get started.`
+    )
   }
 }
 
